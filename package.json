@@ -1,0 +1,47 @@
+{
+  "name": "generarex-start",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "generate-index": "tsx scripts/generate-index.ts",
+    "generate-env": "tsx scripts/generate-env.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rarex/generarex-start.git"
+  },
+  "author": "rarex.dew@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rarex/generarex-start/issues"
+  },
+  "homepage": "https://github.com/rarex/generarex-start#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "lodash.capitalize": "^4.2.1",
+    "lodash.kebabcase": "^4.1.1",
+    "open": "^10.2.0"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/lodash": "^4.17.20",
+    "@types/node": "^24.5.2",
+    "tsx": "^4.20.6"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts",
+      "types": "./src/index.ts"
+    },
+    "./*": {
+      "import": "./src/*.ts",
+      "require": "./src/*.ts",
+      "types": "./src/*.ts"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    //    "declaration": true,
+    //    "declarationMap": true,
+    //    "outDir": "./dist",
+    //    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "module": "ES2022",
+    "target": "ES2022",
+    //    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "bundler"
+  },
+  "type": "module",
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ]
+}
