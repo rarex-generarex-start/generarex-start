@@ -1,24 +1,27 @@
 {
   "name": "generarex-start",
   "version": "1.0.0",
-  "description": "",
+  "description": "Package for generating project structure",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "files": [
+    "src",
+    "scripts",
+    "README.md"
+  ],
   "scripts": {
     "generate-index": "tsx scripts/generate-index.ts",
     "generate-env": "tsx scripts/generate-env.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rarex/generarex-start.git"
+    "url": "git+https://github.com/rarex-generarex-start/generarex-start.git"
   },
   "author": "rarex.dew@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rarex/generarex-start/issues"
+    "url": "https://github.com/rarex-generarex-start/generarex-start/issues"
   },
-  "homepage": "https://github.com/rarex/generarex-start#readme",
+  "homepage": "https://github.com/rarex-generarex-start/generarex-start#readme",
   "dependencies": {
     "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
@@ -32,16 +35,18 @@
     "@types/node": "^24.5.2",
     "tsx": "^4.20.6"
   },
+  "main": "src/index.ts",
+  "types": "src/index.d.ts",
   "exports": {
     ".": {
       "import": "./src/index.ts",
       "require": "./src/index.ts",
-      "types": "./src/index.ts"
+      "types": "./src/index.d.ts"
     },
     "./*": {
       "import": "./src/*.ts",
       "require": "./src/*.ts",
-      "types": "./src/*.ts"
+      "types": "./src/*.d.ts"
     }
   }
 }

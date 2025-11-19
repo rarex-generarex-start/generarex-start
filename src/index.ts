@@ -16,6 +16,5 @@ export * from './utils/ActionRunner';
 export * from './utils/BaseGenerator';
 export * from './utils/Runnable';
 export * from './utils/Settable';
-export * from './utils/defaults';
 export * from './utils/helpers';
 export * from './utils/types';
