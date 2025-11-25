@@ -164,22 +164,22 @@ class EnvValuesManager {
 const envManager: EnvValuesManager = new EnvValuesManager([
     {
         key: ENV_KEYS.projectsPath,
-        description: 'Projects directory path',
+        description: 'Projects path',
         value: `/home/${process.env.USER || 'user'}/www`
     },
     {
         key: ENV_KEYS.dockersPath,
-        description: 'Dockers directory path',
+        description: 'Dockers path',
         value: (values) => path.join(envManager.get('GENERAREX_DEFAULTS_PROJECTS_PATH'), 'docker')
     },
     {
         key: ENV_KEYS.sharedTemplatesPath,
-        description: 'Dockers directory path',
+        description: 'Shared Templates path',
         value: (values) => path.join(envManager.get('GENERAREX_DEFAULTS_PROJECTS_PATH'), 'generarex-start-shared-templates')
     },
     {
         key: ENV_KEYS.domain,
-        description: 'Projects directory path',
+        description: 'Domain',
         value: `localhost`
     },
 ]);

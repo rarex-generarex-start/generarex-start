@@ -3,7 +3,7 @@ import {Action} from "./Action";
 
 class CopyAction extends Action {
     constructor(
-        public srcPath: string,
+        public srcPath: string | string[],
         public destPath: string,
     ) {
         super()
@@ -14,7 +14,9 @@ class CopyAction extends Action {
     }
 
     run(): void {
-        this.copy(this.srcPath, this.destPath);
+        for(let srcPath of [this.srcPath].flat()){
+            this.copy(srcPath, this.destPath);
+        }
     }
 
     protected copy(srcPath: string, destPath: string): void {
