@@ -9,6 +9,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
+      contents: read
+      packages: write
       id-token: write  # Для Trusted Publishing
     
     steps:
@@ -19,7 +21,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.x'  # Текущая LTS версия
-          registry-url: 'https://registry.npmjs.org/'
+          registry-url: 'https://registry.npmjs.com'
 
       - name: Publish to npm
         run: npm publish --provenance
