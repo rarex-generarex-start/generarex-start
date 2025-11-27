@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "generate-index": "tsx scripts/generate-index.ts",
-    "generate-env": "tsx scripts/generate-env.ts"
+    "generate-env": "tsx scripts/generate-env.ts",
+    "generate-env-overwrite": "tsx scripts/generate-env.ts --force"
   },
   "repository": {
     "type": "git",

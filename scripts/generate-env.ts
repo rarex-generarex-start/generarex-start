@@ -9,14 +9,6 @@ dotenv.config({
 
 const args = process.argv.slice(2);
 const forceGenerate = args.includes('--force');
-
-interface EnvTemplateValues {
-    projectsPath: string,
-    dockersPath: string,
-    sharedTemplatesPath: string,
-    domain: string
-}
-
 interface EnvValue {
     key: string;
     description: string;
@@ -161,7 +153,7 @@ class EnvValuesManager {
     }
 }
 
-const envManager: EnvValuesManager = new EnvValuesManager([
+const envManager = new EnvValuesManager([
     {
         key: ENV_KEYS.projectsPath,
         description: 'Projects path',
@@ -170,19 +162,19 @@ const envManager: EnvValuesManager = new EnvValuesManager([
     {
         key: ENV_KEYS.dockersPath,
         description: 'Dockers path',
-        value: (values) => path.join(envManager.get('GENERAREX_DEFAULTS_PROJECTS_PATH'), 'docker')
+        value: (values) => path.join(envManager.get(ENV_KEYS.projectsPath), 'docker')
     },
     {
         key: ENV_KEYS.sharedTemplatesPath,
         description: 'Shared Templates path',
-        value: (values) => path.join(envManager.get('GENERAREX_DEFAULTS_PROJECTS_PATH'), 'generarex-start-shared-templates')
+        value: (values) => path.join(envManager.get(ENV_KEYS.projectsPath), 'generarex-start-shared-templates')
     },
     {
         key: ENV_KEYS.domain,
         description: 'Domain',
         value: `localhost`
     },
-]);
+] as EnvValue[]);
 
 if (forceGenerate || !envManager.isAllValuesSet()) {
     await envManager.promptAll();
